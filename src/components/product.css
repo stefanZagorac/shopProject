@@ -1,0 +1,27 @@
+.product__div{
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: #ccc;
+    border-radius: 1rem;
+    transition: var(--transition);
+}
+
+.product__div:hover{
+    cursor: pointer;
+    background-color: #ddd;
+}
+
+.product__cart__ui{
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+}
+
+.product__cart__ui__btns{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+}

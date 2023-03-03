@@ -1,0 +1,26 @@
+.singlePage__container{
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+
+}
+
+.singlePage__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    background: #ccc;
+    padding: 3rem;
+    border-radius: 1rem;
+}
+
+.singlePage__ul li{
+    list-style: circle;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .singlePage__wrapper{
+        grid-template-columns: 1fr;
+    }
+}

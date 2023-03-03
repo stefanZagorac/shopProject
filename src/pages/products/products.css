@@ -1,0 +1,61 @@
+.products__wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.filter__btns{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    place-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.search__sort__div{
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px) {
+    .products__wrapper{
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+    }
+    .filter__btns{
+        grid-template-columns: repeat(4, 1fr);
+    }
+ 
+ }
+ 
+ /*============ MEDIA QUERIES (SMALL DEVICES) ==========*/
+ 
+ @media screen and (max-width: 600px) {
+     .products__wrapper{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+     }
+
+     .filter__btns{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.2rem;
+    }
+     
+ }
+
+
+  /*============ FOR GALAXY FOLD ==========*/
+
+ @media screen and (max-width: 374px) {
+    .filter__btns{
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    .search__sort__div{
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+        place-items: center;
+    }
+     
+}
