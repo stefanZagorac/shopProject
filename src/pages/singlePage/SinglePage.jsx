@@ -8,16 +8,16 @@ import { MainState } from '../../App';
 
 function SinglePage() {
     const {index} = useParams();
+    const {id} = useParams();
     const productArr = useContext(MainState)
     const numIndex = +index;
-    const [product, setProduct] = React.useState(JSON.parse(localStorage.getItem("product")) || productArr[numIndex]);
+    const [product, setProduct] = React.useState(productArr);
     React.useEffect(() => {
-        setProduct(() => productArr[numIndex])
-        localStorage.setItem("product", JSON.stringify(product))
-    }, [numIndex, product])
+        setProduct(() => productArr.filter(obj => obj.id === id))
+    }, [id, product])
 
     
-    const {name, description, features, category, subcategory, images, price, id} = product;
+    const {name, description, features, category, subcategory, images, price} = product[0];
 
     
   return (

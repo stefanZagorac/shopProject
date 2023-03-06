@@ -6,7 +6,7 @@ import NoImg from "../images/no-image.png"
 
 const SinglePageProduct = ({name, description, features, category, subcategory, images, price, index, id}) => {
 
-    images = localStorage.getItem(index);
+    images = localStorage.getItem(id);
     const cart = useContext(CartContext);
     const itemQuantity = cart.getItemQuantity(id);
        

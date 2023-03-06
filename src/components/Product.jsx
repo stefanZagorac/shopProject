@@ -17,7 +17,7 @@ function Product({ name, images, price, index, id }) {
       .then((res) => res.blob())
       .then((data) => {
         if(images){
-          const key = index.toString();
+          const key = id.toString();
           const mimeType = data.type; // get the MIME type from the fetched data
           const blob = new Blob([data], { type: mimeType }); // create a Blob object with the correct MIME type
           localStorage.setItem(key, URL.createObjectURL(blob)); // store the image data in local storage so we can hold our pictures while changing pages
@@ -30,17 +30,17 @@ function Product({ name, images, price, index, id }) {
 
   React.useEffect(() => {
     const imageUrl = "https://picsum.photos/640/360";
-    const existingImage = localStorage.getItem(index);
+    const existingImage = localStorage.getItem(id);
     if (!existingImage) {
       fetchImage(imageUrl);
     } else {
       setStorageImage(existingImage); // set the existing image data from local storage
     }
-  }, [index]);
+  }, [id]);
 
   return (
       <div className="product__div">
-        <Link to={`/product/${index}`}>
+        <Link to={`/product/${id}`}>
         {images && <img src={storageImage || image} alt="Product image" />} {/* use the stored image data if available */}
         {!images && <img src={NoImg} alt="No image" />}
         </Link>
